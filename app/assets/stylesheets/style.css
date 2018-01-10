@@ -1,0 +1,91 @@
+* {
+	font-family:Lato;
+}
+xmp {
+	margin:0;
+	padding:0;
+}
+
+table, th, td {
+	border: 1px solid black;
+	padding:10px;
+	border-collapse: collapse; /* Jeżeli chcemy żeby tabelka miała wszystkie linie razem - musimy wybrać wszystkie elementy od table, th, td
+	i zastosować border-collapse:collapse - daje nam to spojną tabelke bez przerw miedzy komórkami */
+	/*warto też wiedzieć, ze th - oznacza table header - domyślnie jest pogrubiony i jest wyśrodkowany. */
+} 
+.container {
+	width:60%;
+	margin:0 auto;
+	margin-top:6%;
+}
+.bold {
+	font-weight: 900;
+}
+.italic {
+	font-style: italic;
+}
+.kod {
+	background: #48c9b0;
+	border:1px solid  #0b5345 ;
+}
+img {
+	display:block;
+	margin:0 auto;
+}
+
+.space {
+	display:inline-block;
+	text-indent:15px;
+	padding:0;
+}
+.output {
+	opacity:0.6;
+}
+.output::before {
+	content:"#";
+}
+
+.red {
+	color:green;
+}
+
+nav {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:white;
+	border-bottom:1px solid silver;
+	z-index:2;
+	box-shadow:0 5px 10px silver;
+}
+nav ul {
+	display:flex; /* you need to used flex only for parent */
+	justify-content: space-around; 
+	align-items:center;
+}
+
+nav li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color:black;
+}
+a:hover {
+	color:red;
+}
+
+.navmin {
+	height:1%;
+}
+
+
+pre {
+  overflow: auto;
+}
+
+table {
+	margin: 0 auto;
+}
