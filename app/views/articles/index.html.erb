@@ -1,0 +1,11 @@
+<h1>All Articles</h1>
+<ul id="articles">
+	<% @articles.each do |article| %>
+	<li>
+		<h2><%= article.title %></h2>
+		<p><%= article.body %> 
+		</p>
+	</li>
+	<% end %>
+	<h3>Aktualna godzina to: <%= Time.now %> </h3>
+</ul>
