@@ -5,8 +5,9 @@
 		<h2><%= link_to article.title, article_path(article), class: 'article_title' %></h2>
 		<p><%= article.body %> 
 		</p>
+		<p>Created at: <%= article.created_at %></p>
 	</li>
 	<% end %>
 	<h3>Aktualna godzina to: <%= Time.now %> </h3>
 </ul>
- <%=  link_to "Create new article", new_article_path, class: 'new_article'  %>
+ <%=  link_to "Create new article", new_article_path, class: 'new_arti'  %>
