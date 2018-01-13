@@ -5,7 +5,13 @@
 		<h2><%= link_to article.title, article_path(article), class: 'article_title' %></h2>
 		<p><%= article.body %> 
 		</p>
-		<p>Created at: <%= article.created_at %></p>
+		<p>
+			Created at: <%= article.created_at %>
+		</p>
+		<p>
+			<%= link_to "delete", article_path(article), method: :delete %>
+		</p>
+
 	</li>
 	<% end %>
 	<h3>Aktualna godzina to: <%= Time.now %> </h3>
