@@ -9,11 +9,11 @@
 			Created at: <%= article.created_at %>
 		</p>
 		<p>
-			<%= link_to "delete", article_path(article), method: :delete %>
+			<%= link_to "delete", article_path(article), data: {confirm: "Are you sure?"}, method: :delete %>
 		</p>
 
 	</li>
 	<% end %>
 	<h3>Aktualna godzina to: <%= Time.now %> </h3>
 </ul>
- <%=  link_to "Create new article", new_article_path, class: 'new_arti'  %>
+ <%=  link_to "Create new article", new_article_path, class: 'new_article'  %>
