@@ -5,4 +5,7 @@
 <p class="comment">
 <%= comment.body %>
 </p>
+<p class="destroy">
+<%= link_to "delete", article_comment_path(@article, comment), data: {confirm: "Are you sure?"}, method: :delete %>
+</p>
 </div>
