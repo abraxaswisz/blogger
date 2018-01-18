@@ -5,6 +5,12 @@
 <p><%= render partial: 'comments/form' %></p>
 <p><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %></p>
 <p><%= link_to "Edit", edit_article_path(@article) %></p>
-
-<h3>Comments</h3>
+<br>
+<br>
+<br>
+<% if @article.comments.size == 0 %>
+	<h3>No comments yet</h3>
+<% else %>
+	<h3>Comments(<%= @article.comments.size %>)</h3>
+<% end %>
 <%= render partial: 'articles/comment', collection: @article.comments %>
