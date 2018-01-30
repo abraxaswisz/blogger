@@ -3,7 +3,11 @@
 	<% @articles.each do |article| %>
 	<li>
 		<h2><%= link_to article.title, article_path(article), class: 'article_title' %></h2>
-		<p><%= article.body %> 
+		<p>
+			<%= article.body %> 
+		</p>
+		<p>
+			<%= image_tag article.image.url(:thumb) %>
 		</p>
 		<p>
 			Created at: <%= article.created_at %>
