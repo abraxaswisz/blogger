@@ -5,6 +5,10 @@
 	  <%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
+<p> <% if @article.image.exists? %>
+	<%= image_tag @article.image.url(:medium) %>
+		<% end %>
+	</p>
 <p><%= @article.body %></p>
 
 <p><%= link_to "Back to articles", articles_path %></p>
@@ -13,6 +17,7 @@
 <p><%= link_to "Edit", edit_article_path(@article) %></p>
 <br>
 <br>
+
 <br>
 <% if @article.comments.size == 0 %>
 	<h3>No comments yet</h3>
