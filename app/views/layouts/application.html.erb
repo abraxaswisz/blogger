@@ -11,9 +11,11 @@
   <body>
     <div class="login">
       <% if logged_in? %>
-        <%= "Zalogowany jako #{current_user.email}" %>
+        <p><%= "Zalogowany jako #{current_user.email}" %></p>
+        <p><%= link_to "Logout", logout_path %></p>
        <% else %>
        <p>Niezalogowany</p>
+      <p>Please <%= link_to "Login", login_path %></p>
        <% end %>
     </div>
     <div class="container">
