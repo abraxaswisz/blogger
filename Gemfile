@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'sorcery'
-# Use Capistrano for deployment
+# Use Capistrano for deraployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
