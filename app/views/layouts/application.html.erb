@@ -9,8 +9,15 @@
   </head>
 
   <body>
-<div class="container">
-  <p class="flash"><%= flash.notice %></p>
+    <div class="login">
+      <% if logged_in? %>
+        <%= "Zalogowany jako #{current_user.email}" %>
+       <% else %>
+       <p>Niezalogowany</p>
+       <% end %>
+    </div>
+    <div class="container">
+      <p class="flash"><%= flash.notice %></p>
       <%= yield %>
     </div>
   </body>
