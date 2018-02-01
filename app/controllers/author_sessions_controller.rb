@@ -1,4 +1,5 @@
 class AuthorSessionsController < ApplicationController
+before_action :require_login, except: [:create, :destroy, :new]
 	def new
 		
 	end

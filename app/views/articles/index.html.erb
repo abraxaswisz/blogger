@@ -12,12 +12,15 @@
 		<p>
 			Created at: <%= article.created_at.strftime("%H:%M:%S, %d-%m-%y") %>
 		</p>
+		<% if logged_in? %>
 		<p>
 			<%= link_to "delete", article_path(article), data: {confirm: "Are you sure?"}, method: :delete %>
 		</p>
-
+		<% end %>
 	</li>
 	<% end %>
 	<h3>Aktualna godzina to: <%= Time.now.strftime("%H:%M:%S, %d-%m-%y") %> </h3>
 </ul>
+ <% if logged_in? %>
  <%=  link_to "Create new article", new_article_path, class: 'new_article'  %>
+ <% end %>
