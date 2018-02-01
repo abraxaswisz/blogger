@@ -11,7 +11,8 @@
   <body>
     <div class="login">
       <% if logged_in? %>
-        <p><%= "Zalogowany jako #{current_user.email}" %></p>
+        <p> Zalogowany jako <span class="bold"> <%= "#{current_user.username}" %> </span>
+        </p>
         <p><%= link_to "Logout", logout_path %></p>
        <% else %>
        <p>Niezalogowany</p>
@@ -21,6 +22,14 @@
     <div class="container">
       <p class="flash"><%= flash.notice %></p>
       <%= yield %>
+      
+      <p>
+
+      <% unless current_page?(root_path) %>
+        <h6><%= link_to "Back to articles", root_path %></h6>
+      <% end %>
+
+      </p>
     </div>
   </body>
 </html>
