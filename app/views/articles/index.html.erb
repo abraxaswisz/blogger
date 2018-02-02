@@ -2,24 +2,26 @@
 <ul id="articles">
 	<% @articles.each do |article| %>
 	<li>
-		<h2><%= link_to article.title, article_path(article), class: 'article_title' %></h2>
+		<h2 class="title"><%= link_to article.title, article_path(article), class: 'article_title' %></h2>
 		<p>
 			<%= article.body %> 
 		</p>
 		<p>
+			<% if article.image.exists? %>
 			<%= image_tag article.image.url(:thumb) %>
+			<% end %>
 		</p>
-		<p>
+		<h5>
 			Created at: <%= article.created_at.strftime("%H:%M:%S, %d-%m-%y") %>
-		</p>
+		</h5>
 		<% if logged_in? %>
-		<p>
+		<h6>
 			<%= link_to "delete", article_path(article), data: {confirm: "Are you sure?"}, method: :delete %>
-		</p>
+		</h6>
 		<% end %>
 	</li>
 	<% end %>
-	<h3>Aktualna godzina to: <%= Time.now.strftime("%H:%M:%S, %d-%m-%y") %> </h3>
+	<h4>Aktualna godzina to: <%= Time.now.strftime("%H:%M:%S, %d-%m-%y") %> </h4>
 </ul>
  <% if logged_in? %>
  <%=  link_to "Create new article", new_article_path, class: 'new_article'  %>
