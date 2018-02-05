@@ -14,6 +14,9 @@ table, th, td {
 	i zastosować border-collapse:collapse - daje nam to spojną tabelke bez przerw miedzy komórkami */
 	/*warto też wiedzieć, ze th - oznacza table header - domyślnie jest pogrubiony i jest wyśrodkowany. */
 } 
+body {
+	margin:0;
+}
 
 header {
 	display: flex;
@@ -22,22 +25,28 @@ header {
 	background-image: url(image.jpg);
 	background-position: 50% 70%;
 	background-repeat: no-repeat;
-	background-size: 70%;
 	align-items: center;
 	justify-content: center;
+}
+.transparent {
+	background-color: black;
+	opacity: 0.2;
+	padding: 2% 10%;
+	position: absolute;
+	z-index: 0;
 }
 
 #logo {
 	text-align: center;
 	width: 100%;
-	top:10%;
 	color:white;
 	letter-spacing: 25px;
+	opacity: 1;
+	z-index: 1;
 }
 .container {
-	width:60%;
+	width:70%;
 	margin:0 auto;
-	margin-top:6%;
 }
 .bold {
 	font-weight: 900;
@@ -74,7 +83,7 @@ nav {
 	top:0;
 	left:0;
 	margin:0 auto;
-	width:70%;
+
 	background-color:white;
 	border-bottom:1px solid silver;
 	z-index:2;

@@ -9,8 +9,13 @@
   </head>
 
   <body>
+    <div class="container">
     <header>
-    <h1 id="logo">BLOG</h1>
+    
+      <h1 id="logo">BLOG</h1>
+      <div class="transparent">
+      </div>
+    
     </header>
     <nav>
       <ul>
@@ -30,7 +35,7 @@
        <p>Please <%= link_to "Login", login_path %></p>
        <% end %>
     </div>
-    <div class="container">
+    
       <p class="flash"><%= flash.notice %></p>
       <%= yield %>
       
