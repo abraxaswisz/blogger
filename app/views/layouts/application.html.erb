@@ -9,13 +9,35 @@
   </head>
 
   <body>
+
     <div class="container">
-    <header>
-    
+      <div class="login">
+        <% if logged_in? %>
+        <ul>
+          <li>
+           Zalogowany jako <span class="bold"> <%= "#{current_user.username}" %> </span>
+         </li>
+         <li>
+          <%= link_to "Logout", logout_path %>
+          </li>
+       </ul>
+         <% else %>
+         <ul>
+           <li>
+              Niezalogowany
+            </li>
+           <li> 
+            Please <%= link_to "Login", login_path %>
+            </li>
+         </ul>
+       <% end %>
+     </div>
+
+     <header>
       <h1 id="logo">BLOG</h1>
       <div class="transparent">
       </div>
-    
+
     </header>
     <nav>
       <ul>
@@ -25,27 +47,18 @@
         <li><%= link_to "Authors", authors_path %></li>
       </ul>
     </nav>
-    <div class="login">
-      <% if logged_in? %>
-        <p> Zalogowany jako <span class="bold"> <%= "#{current_user.username}" %> </span>
-        </p>
-        <p><%= link_to "Logout", logout_path %></p>
-       <% else %>
-       <p>Niezalogowany</p>
-       <p>Please <%= link_to "Login", login_path %></p>
-       <% end %>
-    </div>
+
     
-      <p class="flash"><%= flash.notice %></p>
-      <%= yield %>
-      
-      <p>
+    <p class="flash"><%= flash.notice %></p>
+    <%= yield %>
+
+    <p>
 
       <% unless current_page?(root_path) %>
-        <h6><%= link_to "Back to articles", root_path %></h6>
+      <h6><%= link_to "Back to articles", root_path %></h6>
       <% end %>
 
-      </p>
-    </div>
-  </body>
+    </p>
+  </div>
+</body>
 </html>
