@@ -18,7 +18,10 @@ body {
 	margin:0;
 }
 
+
+
 header {
+	margin-top:-4%;
 	display: flex;
 	height: 25vh;
 	overflow: hidden;
@@ -28,6 +31,13 @@ header {
 	align-items: center;
 	justify-content: center;
 }
+
+.login	{
+	width: 25%;
+	position: relative;
+	margin-left: 75%;
+}
+
 .transparent {
 	background-color: black;
 	opacity: 0.2;
@@ -68,12 +78,6 @@ img {
 	text-indent:15px;
 	padding:0;
 }
-.output {
-	opacity:0.6;
-}
-.output::before {
-	content:"#";
-}
 
 .red {
 	color:green;
@@ -83,19 +87,18 @@ nav {
 	top:0;
 	left:0;
 	margin:0 auto;
-
 	background-color:white;
 	border-bottom:1px solid silver;
 	z-index:2;
 	box-shadow:0 5px 10px silver;
 }
-nav ul {
-	display:flex; /* you need to used flex only for parent */
+nav ul, .login ul {
+	display:flex;
 	justify-content: space-around; 
 	align-items:center;
 }
 
-nav li {
+nav li, .login li {
 	list-style: none;
 }
 
