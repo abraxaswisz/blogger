@@ -1,0 +1,23 @@
+      <% if logged_in? %>
+        <ul>
+          <li>
+            Zalogowany jako
+            <span class="bold">
+              <%= "#{current_user.username}" %>
+            </span>
+          </li>
+          <li>
+            <%= link_to "Logout", logout_path %>
+          </li>
+        </ul>
+        <% else %>
+          <ul>
+            <li>
+              Niezalogowany
+            </li>
+            <li>
+              Please
+              <%= link_to "Login", login_path %>
+            </li>
+          </ul>
+          <% end %>

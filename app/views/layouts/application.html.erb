@@ -1,65 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blogger</title>
-    <%= csrf_meta_tags %>
 
+<head>
+  <title>Blogger</title>
+  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
 
-    <div class="container">
-      <div class="login">
-        <% if logged_in? %>
-        <ul>
-          <li>
-           Zalogowany jako <span class="bold"> <%= "#{current_user.username}" %> </span>
-         </li>
-         <li>
-          <%= link_to "Logout", logout_path %>
-          </li>
-       </ul>
-         <% else %>
-         <ul>
-           <li>
-              Niezalogowany
-            </li>
-           <li> 
-            Please <%= link_to "Login", login_path %>
-            </li>
-         </ul>
-       <% end %>
-     </div>
-
-     <header>
+  <div class="wrapper">
+  <!-- login button -->
+    <div class="login">
+      <%= render partial: "layouts/login" %>
+    </div>
+<!-- header -->
+    <header>
       <h1 id="logo">BLOG</h1>
-      <div class="transparent">
-      </div>
-
+      
     </header>
-    <nav>
-      <ul>
-        <li><%= link_to "Strona główna", root_path %></li>
-        <li><%= link_to "Articles", articles_path %></li>
-        <li><%= link_to "Tags", tags_path %></li>
-        <li><%= link_to "Authors", authors_path %></li>
-        <li><%= link_to "About Me", about_path %></li>
-      </ul>
+<!-- nav -->
+    <nav class="nav-main">
+      <%= render partial: "layouts/nav" %>
     </nav>
 
-    
-    <p class="flash"><%= flash.notice %></p>
-    <%= yield %>
-
-    <p>
-
-      <% unless current_page?(root_path) %>
-      <h6><%= link_to "Back to articles", root_path %></h6>
-      <% end %>
-
+    <p class="flash">
+      <%= flash.notice %>
     </p>
+    <%= yield %>
+      <p>
+
+        <% unless current_page?(root_path) %>
+          <h6>
+            <%= link_to "Back to articles", root_path %>
+          </h6>
+          <% end %>
+
+      </p>
   </div>
 </body>
+
 </html>
