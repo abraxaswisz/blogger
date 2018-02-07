@@ -9,15 +9,16 @@
 * {
     padding: 0;
     box-sizing:border-box;
-    color: var(--dark);
+    color: var(--darkest);
     font-style:Helvetica, Arial; 
 }
 body {
     background:#ccc;
     font-family: 'Slabo 27px', serif;
 }
-body a {
+a {
     text-decoration: none;
+    color:var(--darkest)
 }
 
 
@@ -25,7 +26,7 @@ body a {
     display:grid;
     grid-gap:15px;
     margin:50px 30px;
-    background:var(--darkest)
+    background:var(--brownish)
 }
 
 
@@ -60,7 +61,6 @@ body a {
 
 // header
 header {
-    background:url('header.jpg');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -80,4 +80,8 @@ header h1 {
 }
 .article li {
     background:var(--light);
+}
+
+.article a {
+    text-decoration: none;
 }
