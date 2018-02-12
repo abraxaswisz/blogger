@@ -4,7 +4,7 @@
 <head>
   <title>Blogger</title>
   <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto' %>
+    <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -12,19 +12,22 @@
 <body>
 
   <div class="wrapper">
-  <!-- login button -->
-    <div class="login">
-      <%= render partial: "layouts/login" %>
-    </div>
-<!-- header -->
-    <header>
-      <h1 id="logo">BLOG</h1>
-      
-    </header>
-<!-- nav -->
+    <!-- nav -->
     <nav class="nav-main">
       <%= render partial: "layouts/nav" %>
     </nav>
+    <% if logged_in? %>
+      Zalogowany jako:
+      <span class="bold">
+        <%= "#{current_user.username}" %> 
+      </span>
+        <% end %>
+
+  <!-- login button -->
+  
+    <div class="login">
+      <%= render partial: "layouts/login" %>
+    </div>
 
     <p class="flash">
       <%= flash.notice %>

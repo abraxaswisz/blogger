@@ -1,6 +1,10 @@
       <ul>
         <li>
-          <%= link_to "Strona główna", root_path %>
+         <header>
+           <h1>
+             <%= link_to "BLOG", root_path %>
+            </h1> 
+          </header>
         </li>
         <li>
           <%= link_to "Articles", articles_path %>
@@ -13,5 +17,8 @@
         </li>
         <li>
           <%= link_to "About Me", about_path %>
+        </li>
+        <li>
+            <%= render partial: "layouts/login" %>
         </li>
       </ul>
