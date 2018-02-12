@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 	include ArticlesHelper
 	def index
 		@articles = Article.all
+		@last_article = Article.last
 	end
 	def show
 		@article = Article.find(params[:id])

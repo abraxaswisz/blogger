@@ -75,18 +75,33 @@ a {
     justify-content: right;
     list-style: none;
 }
-// articles
-.article {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    list-style:none;
-    grid-gap:20px;
-    margin:15px;
+
+
+//articles
+
+h2 {
+    grid-area:header;
 }
-.article li {
-    background:var(--light);
+.last_article {
+    grid-area:last;
 }
 
-.article a {
-    text-decoration: none;
+.articles {
+    display:grid;
+    grid-gap:20px;
+    grid-template-areas: 
+    ".  header ."
+    ". last ."
+    "remain remain remain";
 }
+
+.remaining {
+    display:grid;
+    grid-area:remain;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+// ubrać w równe kwadraty - jeżeli nie ma obrazka niech bedzie jakiś domyślny. Zlikwidować treść artykułów, albo ograniczyć
+// zrobić sensowną nawigacje
+// przewalić login do prawego rogu
