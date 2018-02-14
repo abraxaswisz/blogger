@@ -7,6 +7,8 @@
 * {
     padding: 0;
     box-sizing:border-box;
+    word-wrap: break-word;
+    line-height: 1.5rem;
 }
 body {
     margin:0; 
@@ -32,9 +34,10 @@ a {
 .nav-main ul {
     display:grid;
     grid-gap: 20px;
-    grid-template-columns: 4fr repeat(5, 1fr) 1fr;
+    grid-template-columns: 4fr repeat(5, 1fr);
     list-style: none;
     margin:0;
+    border-bottom:1px solid #ddd;
 }
 .nav-main a {
     color: #444;
@@ -42,8 +45,8 @@ a {
     display:block; // i need to keep this!
     font-weight:400;
     text-decoration: none;
-    padding:30px;
-    text-align: right;
+    padding:2rem;
+    text-align: center;
     font-size:1rem;
     font-style: uppercase;
     line-height:1.8rem;
@@ -63,9 +66,9 @@ a {
     font-weight:800;
 }
 
-.nav-main header h1 {
-    margin:0;
-}
+// .nav-main header h1 {
+//     margin:0;
+// }
 
 // login
 
@@ -78,44 +81,64 @@ a {
 //articles
 .articles {
     display: grid;
-    grid-gap:20px;
+    grid-gap:3rem;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.last_article {
+// global for .last_article and .remain
+.last_article, .remain {
     position: relative;
     display:grid;
-    grid-column:1/5;
     text-align:left;
-    height:15rem;
-    opacity: 0.9;
+    opacity: 0.8;
+   
 
 }
+// individual
 .remain {
-    position:relative;
-    display:grid;
+    height:15rem;
 }
-.last_article .bg-image,
-.remain .bg-image {
+
+.last_article {
+     grid-column:1/5;
+     height:20rem;
+}
+
+// style for background images
+
+.bg-image {
+    background-image:url('abstractbg.jpeg');
+}
+.bg-image, .bg-image-diff {
     position:absolute;
-    background:url('abstractbg.jpeg');
     background-size:cover;
+    background-position: center;
     background-repeat: no-repeat;
     height:15rem;
     width:100%;
     z-index:0;
     opacity:0.6;
 }
-.last_article:hover {
+.last_article .bg-image, .last_article .bg-image-diff {
+    height:20rem;
+}
+
+
+.last_article:hover, .remain:hover {
     opacity:1
 }
+
+// content styling
+
  .art-content {
+    padding-left:2rem;
+    padding-bottom:0.5rem;
+    align-self:end;
     z-index:2;
-    padding: 30px;
 }
 
 
 
-// ubrać w równe kwadraty - jeżeli nie ma obrazka niech bedzie jakiś domyślny. Zlikwidować treść artykułów, albo ograniczyć
+// Zlikwidować treść artykułów, albo ograniczyć
 // zrobić sensowną nawigacje
 // przewalić login do prawego rogu
