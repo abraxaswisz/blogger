@@ -1,32 +1,36 @@
+<h2>All Articles</h2>
 <section class="articles">
-	<h2>All Articles</h2>
 <!-- last article -->
 	<div class="last_article">
-		<h3>
-			<%= link_to @last_article.title, article_path(@last_article) %>
-		</h3>
-		<p>
-			<%= @last_article.body %>
-		</p>
-		<p>
-			<% if @last_article.image.exists? %>
-				<%= image_tag @last_article.image.url(:thumb) %>
+		<div class='bg-image'></div>
+		<div class="art-content">
+			<h3>
+				<%= link_to @last_article.title, article_path(@last_article) %>
+			</h3>
+			<p>
+				<%= @last_article.body %>
+			</p>
+			<p>
+				<% if @last_article.image.exists? %>
+					<%= image_tag @last_article.image.url(:thumb) %>
+				<% end %>
+			</p>
+			<h5>
+				Created at: <%= @last_article.created_at.strftime("%H:%M:%S, %d-%m-%y") %>
+			</h5>
+			<% if logged_in? %>
+				<h6>
+					<%= link_to "delete", article_path(@last_article), data: {confirm: "Are you sure?"}, method: :delete %>
+				</h6>
 			<% end %>
-		</p>
-		<h5>
-			Created at: <%= @last_article.created_at.strftime("%H:%M:%S, %d-%m-%y") %>
-		</h5>
-		<% if logged_in? %>
-			<h6>
-				<%= link_to "delete", article_path(@last_article), data: {confirm: "Are you sure?"}, method: :delete %>
-			</h6>
-		<% end %>
-	</div>
+		</div>
+</div>
 
 <!-- remaining articles -->
-	<div class="remaining">
-		<% @articles.reverse.drop(1).each do |article| %>
-			<div class="remain">
+	<% @articles.reverse.drop(1).each do |article| %>
+		<div class="remain">
+			<div class='bg-image'></div>
+			<div class="art-content">
 				<h3>
 					<%= link_to article.title, article_path(article), class: 'article_title' %>
 				</h3>
@@ -45,12 +49,12 @@
 					<h6>
 						<%= link_to "delete", article_path(article), data: {confirm: "Are you sure?"}, method: :delete %>
 					</h6>
-				<% end %>
+				
+			<% end %>
+		</div>
 
-
-			</div>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
 					
 </section>
 <h4>Aktualna godzina to:

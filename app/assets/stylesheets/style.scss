@@ -9,6 +9,7 @@
     box-sizing:border-box;
 }
 body {
+    margin:0; 
     background:var(--background);
     font-family: 'Slabo 27px', serif;
 }
@@ -21,7 +22,7 @@ a {
 .wrapper {
     display:grid;
     grid-gap:15px;
-    margin:0;
+    margin:0 6rem;
     background:var(--background);
 }
 
@@ -31,23 +32,22 @@ a {
 .nav-main ul {
     display:grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 4fr repeat(5, 1fr) 1fr;
     list-style: none;
     margin:0;
 }
 .nav-main a {
+    color: #444;
     background-color:var(--background);
-    display:block;
+    display:block; // i need to keep this!
     font-weight:400;
     text-decoration: none;
-    color:var(--brownish);
     padding:30px;
     text-align: right;
-    font-size:1.2rem;
+    font-size:1rem;
     font-style: uppercase;
     line-height:1.8rem;
     transition: all 1000;
-    border-right:1px solid rgb(192, 192, 192);
 }
 
 .nav-main a:hover {
@@ -58,10 +58,8 @@ a {
 
 
 .nav-main header h1 a {
-    text-align:center;
+    text-align:left;
     font-size:2.4rem;
-    padding-left:20%;
-    border-right:1px solid rgb(192, 192, 192);
     font-weight:800;
 }
 
@@ -78,29 +76,45 @@ a {
 
 
 //articles
-
-h2 {
-    grid-area:header;
-}
-.last_article {
-    grid-area:last;
-}
-
 .articles {
-    display:grid;
+    display: grid;
     grid-gap:20px;
-    grid-template-areas: 
-    ".  header ."
-    ". last ."
-    "remain remain remain";
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.remaining {
+.last_article {
+    position: relative;
     display:grid;
-    grid-area:remain;
-    grid-template-columns: repeat(3, 1fr);
+    grid-column:1/5;
+    text-align:left;
+    height:15rem;
+    opacity: 0.9;
 
 }
+.remain {
+    position:relative;
+    display:grid;
+}
+.last_article .bg-image,
+.remain .bg-image {
+    position:absolute;
+    background:url('abstractbg.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:15rem;
+    width:100%;
+    z-index:0;
+    opacity:0.6;
+}
+.last_article:hover {
+    opacity:1
+}
+ .art-content {
+    z-index:2;
+    padding: 30px;
+}
+
+
 
 // ubrać w równe kwadraty - jeżeli nie ma obrazka niech bedzie jakiś domyślny. Zlikwidować treść artykułów, albo ograniczyć
 // zrobić sensowną nawigacje
