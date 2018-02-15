@@ -82,7 +82,8 @@ a {
 .articles {
     display: grid;
     grid-gap:3rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 }
 
 // global for .last_article and .remain
@@ -91,7 +92,7 @@ a {
     display:grid;
     text-align:left;
     opacity: 0.8;
-   
+    background: linear-gradient(rgba(0,0,0,0), rgba(255, 255, 255, 0.8));
 
 }
 // individual
@@ -100,7 +101,7 @@ a {
 }
 
 .last_article {
-     grid-column:1/5;
+     grid-column:1/4;
      height:20rem;
 }
 
