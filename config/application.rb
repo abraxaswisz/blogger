@@ -16,5 +16,3 @@ module Blogger
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
-config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
