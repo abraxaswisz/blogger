@@ -11,9 +11,6 @@
 			<h3>
 				<%= link_to @last_article.title, article_path(@last_article) %>
 			</h3>
-			<p>
-				<%= @last_article.body %>
-			</p>
 			<h6>
 				Created at: <%= @last_article.created_at.strftime("%d-%m-%y") %>
 			</h6>
@@ -37,11 +34,6 @@
 				<h3>
 					<%= link_to article.title, article_path(article), class: 'article_title' %>
 				</h3>
-				<p><%= article.body %>
-					
-				</p>
-				<p>
-				</p>
 				<h6>
 					Created at: <%= article.created_at.strftime("%d-%m-%y") %>
 				</h6>
