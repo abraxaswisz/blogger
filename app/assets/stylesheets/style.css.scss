@@ -9,10 +9,11 @@
     box-sizing:border-box;
     word-wrap: break-word;
     line-height: 1.5rem;
+    font-size:1rem;
 }
 body {
     margin:0; 
-    background:var(--background);
+    background:#efefef;
     font-family: 'Slabo 27px', serif;
 }
 a {
@@ -24,8 +25,10 @@ a {
 .wrapper {
     display:grid;
     grid-gap:15px;
-    margin:0 6rem;
+    max-width:1400px;
+    margin:0 auto;
     background:var(--background);
+    padding:0 5rem;
 }
 
 
@@ -45,7 +48,7 @@ a {
     display:block; // i need to keep this!
     font-weight:400;
     text-decoration: none;
-    padding:2rem;
+    padding:2rem 1rem;
     text-align: center;
     font-size:1rem;
     font-style: uppercase;
@@ -66,11 +69,11 @@ a {
     font-weight:800;
 }
 
-// .nav-main header h1 {
-//     margin:0;
-// }
+/* .nav-main header h1 {
+     margin:0;
+ }
 
-// login
+ login*/
 
 .login ul {
     justify-content: right;
@@ -81,19 +84,19 @@ a {
 //articles
 .articles {
     display: grid;
-    grid-gap:3rem;
+    grid-gap:2rem;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
 }
 
-// global for .last_article and .remain
+/* global for .last_article and .remain*/
 .last_article, .remain {
+    padding:2.5rem 0;
     position: relative;
     display:grid;
     text-align:left;
     opacity: 0.8;
-    background: linear-gradient(rgba(0,0,0,0), rgba(255, 255, 255, 0.8));
-
+    border-bottom:1px solid #ddd;
 }
 // individual
 .remain {
@@ -115,13 +118,13 @@ a {
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
-    height:15rem;
+    height:13rem;
     width:100%;
     z-index:0;
     opacity:0.6;
 }
 .last_article .bg-image, .last_article .bg-image-diff {
-    height:20rem;
+    height:18rem;
 }
 
 

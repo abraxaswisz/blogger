@@ -31,6 +31,11 @@
     <%= form.password_field :password_confirmation, id: :author_password_confirmation %>
   </div>
 
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, id: :author_avatar %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
